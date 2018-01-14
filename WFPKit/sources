@@ -1,0 +1,14 @@
+TARGETNAME=wfp_kit
+TARGETTYPE=DRIVER
+TARGETPATH=obj
+
+C_DEFINES = $(C_DEFINES) -DNDIS51=1 
+C_DEFINES=$(C_DEFINES) -DNDIS_WDM=1
+C_DEFINES=$(C_DEFINES) -DNDIS50_MINIPORT=1 
+
+INCLUDES = %BUILD%\inc
+LIBS     = %BUILD%\lib
+
+SOURCES = driver_entry.cpp \
+          wfp_kits.cpp \
+          global.cpp \
